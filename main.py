@@ -702,8 +702,12 @@ def trapnime():
 def api():
 	return render_template('index.html')
 
+@app.route('/', methods=['GET','POST'])
+def def():
+        return render_template('tod.html')
+
 @app.errorhandler(404)
 def error(e):
-	return render_template('docs.html'), 404
+	return render_template('eror.html'), 404
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=int(os.environ.get('PORT','5000')),debug=True)
