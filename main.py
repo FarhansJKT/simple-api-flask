@@ -700,7 +700,7 @@ def trapnime():
 
 @app.route('/api', methods=['GET','POST'])
 def api():
-	return render_template('docs.html')
+	return render_template('index.html')
 
 @app.errorhandler(404)
 def error(e):
