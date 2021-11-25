@@ -698,13 +698,13 @@ def trapnime():
 			'result': ntrap
 		}
 
-@app.route('/api', methods=['GET','POST'])
+@app.route('/docs', methods=['GET','POST'])
 def api():
-	return render_template('index.html')
+	return redirect('https://kalong-api.herokuapp.com/docs')
 
 @app.route('/', methods=['GET','POST'])
 def far():
-	return render_template('tod.html')
+	return redirect('https://kalong-api.herokuapp.com/')
 
 @app.errorhandler(404)
 def error(e):
