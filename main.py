@@ -742,8 +742,8 @@ def registerp():
 	tw = f"{password}"
 	oy = f"{info}"
 	pq = f"{username}"
-	dat1 = [x for x in users if x.email == email][0]
-	if not dat1 and password == cpassword:
+	dat = [u for u in users if u.email == email][0]
+	if not dat and password == cpassword:
 		users.append(User(email=we, username=pq, password=tw, info=oy))
 		return redirect('/login')
 	else:return render_template('register.html')
