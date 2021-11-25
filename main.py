@@ -721,7 +721,7 @@ def loginp():
 		session['user_id'] = dat1.email
 		return redirect('/api')
 	else:
-		dat2 = [x for x in users if x.username == email]
+		dat2 = [x for x in users if x.username == email][1]
 		if dat2 and dat2.password == password:
 			session['user_id'] = dat2.email
 			return redirect('/api')
@@ -745,6 +745,7 @@ def registerp():
 	dat1 = [x for x in users if x.email == email]
 	if not dat1 and password == cpassword:
 		users.append(User(email=we, username=pq, password=tw, info=oy))
+                return redirect('/login')
 	else:return render_template('register.html')
 
 @app.route('/', methods=['GET','POST'])
