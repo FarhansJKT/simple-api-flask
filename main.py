@@ -707,7 +707,7 @@ def trapnime():
 			'result': ntrap
 		}
 
-@app.route('/api', methods=['GET','POST'])
+@app.route('/docs', methods=['GET','POST'])
 def api():
 	if not g.user:
 		return redirect('/login')
@@ -728,7 +728,7 @@ def loginp():
 		dat = [x for x in users if x.email == email][0]
 		if dat and dat.password == password:
 			session['user_id'] = dat.email
-			return redirect('/api')
+			return redirect('/docs')
 
 	except IndexError:
 		return redirect('/register')
