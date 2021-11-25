@@ -702,7 +702,7 @@ def trapnime():
 @app.route('/api', methods=['GET','POST'])
 def api():
 	if not g.user:
-		return redirect(url_for('login'))
+		return redirect('/login')
 	else:return render_template('index.html')
 
 @app.route('/login', methods=['GET'])
@@ -719,12 +719,12 @@ def loginp():
 	dat1 = [x for x in users if x.email == email][0]
 	if dat1 and dat1.password == password:
 		session['user_id'] = dat1.email
-		return redirect(url_for('api'))
+		return redirect('/api')
 	else:
 		dat2 = [x for x in users if x.username == email][0]
 		if dat2 and dat2.password == password:
 			session['user_id'] = dat2.email
-			return redirect(url_for('api'))
+			return redirect('/api')
 		else:return render_template('login.html')
 
 @app.route('/register', methods=['GET'])
