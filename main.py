@@ -739,14 +739,14 @@ def registerp():
 	cpassword = request.form['repassword']
 	username = request.form['username']
 	info = request.form['info']
-
-	dat1 = [x for x in users if x.email == email]
-	if dat1:
-		return render_template('register.html')
-	else:
-		if password == cpassword:
-			users.append(User(email=f'{email}', username=f'{username}', password=f'{password}', info=f'{info}'))
-		else:return render_template('register.html')
+	we = f"{email}"
+	tw = f"{password}"
+	oy = f"{info}"
+	pq = f"{username}"
+	dat1 = [x for x in users if x.email !== email]
+	if dat1 and password == cpassword:
+		users.append(User(email=we, username=pq, password=tw, info=oy))
+	else:return render_template('register.html')
 
 @app.route('/', methods=['GET','POST'])
 def far():
