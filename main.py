@@ -42,7 +42,7 @@ def before_request():
     g.user = None
 
     if 'user_id' in session:
-        user = [x for x in users if x.email == session['user_id']]
+        user = [x for x in users if x.email == session['user_id']][0]
         g.user = user
 
 @app.errorhandler(RequestURITooLarge)
@@ -745,7 +745,7 @@ def registerp():
 	dat1 = [x for x in users if x.email == email][0]
 	if not dat1 and password == cpassword:
 		users.append(User(email=we, username=pq, password=tw, info=oy))
-                return redirect('/login')
+		return redirect('/login')
 	else:return render_template('register.html')
 
 @app.route('/', methods=['GET','POST'])
