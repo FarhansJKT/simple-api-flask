@@ -716,12 +716,12 @@ def loginp():
 	email = request.form['email']
 	password = request.form['password']
 
-	dat1 = [x for x in users if x.email == email][0]
+	dat1 = [x for x in users if x.email == email]
 	if dat1 and dat1.password == password:
 		session['user_id'] = dat1.email
 		return redirect('/api')
 	else:
-		dat2 = [x for x in users if x.username == email][0]
+		dat2 = [x for x in users if x.username == email]
 		if dat2 and dat2.password == password:
 			session['user_id'] = dat2.email
 			return redirect('/api')
@@ -740,7 +740,7 @@ def registerp():
 	username = request.form['username']
 	info = request.form['info']
 
-	dat1 = [x for x in users if x.email == email][0]
+	dat1 = [x for x in users if x.email == email]
 	if dat1:
 		return render_template('register.html')
 	else:
