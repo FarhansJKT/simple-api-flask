@@ -42,7 +42,7 @@ def before_request():
     g.user = None
 
     if 'user_id' in session:
-        user = [x for x in users if x.email == session['user_id']][0]
+        user = [x for x in users if x.email == session['user_id']]
         g.user = user
 
 @app.errorhandler(RequestURITooLarge)
