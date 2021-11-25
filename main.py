@@ -726,7 +726,7 @@ def loginp():
 
 	try:
 		dat = [x for x in users if x.email == email][0]
-		if dat1 and dat.password == password:
+		if dat and dat.password == password:
 			session['user_id'] = dat.email
 			return redirect('/api')
 
