@@ -42,7 +42,7 @@ def before_request():
     g.user = None
 
     if 'user_id' in session:
-        user = [x for x in users if x.email == session['user_id']]
+        user = [x for x in users if x.email == session['user_id']][0]
         g.user = user
 
 @app.errorhandler(RequestURITooLarge)
@@ -716,12 +716,12 @@ def loginp():
 	email = request.form['email']
 	password = request.form['password']
 
-	dat1 = [x for x in users if x.email == email]
+	dat1 = [x for x in users if x.email == email][0]
 	if dat1 and dat1.password == password:
 		session['user_id'] = dat1.email
 		return redirect('/api')
 	else:
-		dat2 = [x for x in users if x.username == email][1]
+		dat2 = [x for x in users if x.username == email][0]
 		if dat2 and dat2.password == password:
 			session['user_id'] = dat2.email
 			return redirect('/api')
@@ -742,7 +742,7 @@ def registerp():
 	tw = f"{password}"
 	oy = f"{info}"
 	pq = f"{username}"
-	dat1 = [x for x in users if x.email == email]
+	dat1 = [x for x in users if x.email == email][0]
 	if not dat1 and password == cpassword:
 		users.append(User(email=we, username=pq, password=tw, info=oy))
                 return redirect('/login')
