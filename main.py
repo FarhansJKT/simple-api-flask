@@ -733,7 +733,6 @@ def registerg():
 
 @app.route('/register', methods=['POST'])
 def registerp():
-	session.pop('user_id', None)
 	email = request.form['email']
 	password = request.form['password']
 	cpassword = request.form['repassword']
