@@ -9,6 +9,7 @@ from urllib.parse import *
 from urllib.request import *
 from textpro import tp
 from flask import *
+from nulis import tulis
 from werkzeug.exceptions import *
 #from werkzeug.utils import *
 from bs4 import BeautifulSoup as bs
@@ -79,6 +80,12 @@ def tfs():
 	url = f"http://docs-jojo.herokuapp.com/api/tafsir?q={query}"
 	res = get(url).json()
 	return res
+
+#
+@app.route('/api/nulis', methods=['GET','POST'])
+def nuls():
+    for i in tulis(request.args.get('q'), worker=10):
+        i.show()
 
 # pro
 @app.route('/api/textpro', methods=['GET','POST'])
