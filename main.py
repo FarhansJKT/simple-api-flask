@@ -8,6 +8,7 @@ from urllib.parse import *
 from urllib.request import *
 from textpro import tp
 from flask import *
+import urllib2
 from nulis import tulis
 from werkzeug.exceptions import *
 #from werkzeug.utils import *
