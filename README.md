@@ -1,7 +1,7 @@
 # FREE REST API DOCUMENTATION
 
 How to get Json Response 
-in your rest api
+in your api
 
 Python Example :
 ```python
