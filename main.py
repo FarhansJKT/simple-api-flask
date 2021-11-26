@@ -89,11 +89,8 @@ def tfs():
 def nuls():
     for i in tulis(request.args.get('q'), worker=10):
         id = f"nulis{generateId(9)}.jpg"
-        i.show()
         i.save(id)
-        image_binary = read_image(pid)
-        
-        return send_file(id, mimetype=")
+        return send_file(id, mimetype='image/jpg')
 
 # pro
 @app.route('/api/textpro', methods=['GET','POST'])
