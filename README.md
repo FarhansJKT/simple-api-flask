@@ -3,7 +3,7 @@
 How to get Json Response 
 in your api
 
-Python Example :
+Python Flask Example :
 ```python
 from falsk import *
 import json
@@ -22,4 +22,8 @@ def tebakgambar():
             'answer': res_answer
        }
     }
+```
+
+Nodejs Expressjs Example:
+```javascript
 ```
