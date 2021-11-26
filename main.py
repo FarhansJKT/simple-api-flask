@@ -36,6 +36,10 @@ apiKey_ocr = 'RiriCans'
 app.config['MEDIA'] = 'tts'
 app.secret_key = b'BB,^z\x90\x88?\xcf\xbb'
 
+def generateId(count):
+    result_str = ''.join(random.sample('abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', count))
+    return result_str
+
 @app.before_request
 def before_request():
     g.user = None
@@ -84,7 +88,9 @@ def tfs():
 @app.route('/api/nulis', methods=['GET','POST'])
 def nuls():
     for i in tulis(request.args.get('q'), worker=10):
+        id = def generateId(9)
         i.show()
+        i.save(f"nulis-{id}")
 
 # pro
 @app.route('/api/textpro', methods=['GET','POST'])
