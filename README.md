@@ -26,4 +26,7 @@ def tebakgambar():
 
 Nodejs Expressjs Example:
 ```javascript
+const expres = require('express');
+const app = express()
+const router = app.router
 ```
