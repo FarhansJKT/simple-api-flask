@@ -8,7 +8,6 @@ from urllib.parse import *
 from urllib.request import *
 from textpro import tp
 from flask import *
-import urllib2
 from nulis import tulis
 from werkzeug.exceptions import *
 #from werkzeug.utils import *
@@ -42,12 +41,7 @@ def generateId(count):
     return result_str
 
 def downloadImg(urll, namefile):
-    response = urllib2.urlopen(urll)
-    data = response.read()
-    filename = namafile
-    file_ = open(filename, 'w')
-    file_.write(data)
-    file_.close()
+    urllib.request.urlretrieve(urll, namefile)
 
 @app.before_request
 def before_request():
