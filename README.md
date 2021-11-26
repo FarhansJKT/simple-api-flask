@@ -3,11 +3,12 @@
 Welcome to my Rest api 🔥
 kami menyediakan berbagai macam api json
 yang slalu update menjadi yang terbaik
-
-Author   : Farhanss SmPD.ID
-<br>Template : Farhan 
-<br>App      : Python Flask
-<br>Build    : -
+```bash
+> Author   : Farhanss SmPD.ID
+> Template : Farhan & web
+> App      : Python Flask
+> Build    : -
+```
 
 You don't have apikey? My api no use apikey
 free rest api for you
