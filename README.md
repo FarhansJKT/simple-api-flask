@@ -5,9 +5,9 @@ kami menyediakan berbagai macam api json
 yang slalu update menjadi yang terbaik
 ```bash
 > Author   : Farhanss SmPD.ID
-> Template : Farhan & web
+> Template : farhanXcode7
 > App      : Python Flask
-> Build    : -
+> Build    : heroku/python
 ```
 
 You don't have apikey? My api no use apikey
