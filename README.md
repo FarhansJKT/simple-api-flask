@@ -2,8 +2,9 @@
 
 How to get Json Response 
 in your api
-
-Python Flask Example :
+```
+$ Python Flask Example :
+```
 ```python
 from falsk import *
 import json
@@ -23,8 +24,9 @@ def tebakgambar():
        }
     }
 ```
-
-Nodejs Expressjs Example:
+```
+$ Nodejs Expressjs Example:
+```
 ```javascript
 const express = require('express');
 const router = express.Router();
@@ -32,6 +34,17 @@ const fetch = require('node-fetch');
 
 router.get('/api/tebakgambar', (req, res) => {
    fetch('https://docs-klapi.herokuapp.com/api/games/tebakgambar')
-   .then(res =>
-}
+   .then(response => response.json())
+   .then(data => {
+       res.json({
+             status: 200,
+             creator: 'yourname',
+             api: 'kalong-api',
+             result: {
+                  image: data.result.soal,
+                  answer: data.result.jawaban
+             }
+       })
+    })
+})
 ```
