@@ -41,7 +41,7 @@ def generateId(count):
     result_str = ''.join((random.choice('abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for i in range(count)))
     return result_str
 
-def ambil(urll, namefile):
+def downloadImg(urll, namefile):
     response = urllib2.urlopen(urll)
     data = response.read()
     filename = namafile
@@ -701,6 +701,172 @@ def nsfwneko():
 		}
 
 @app.route('/api/wibu/trap', methods=['GET','POST'])
+def trapnime():
+	try:
+		trap = get('https://waifu.pics/api/nsfw/trap').json()
+		ntrap = trap['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': ntrap
+		}
+	except:
+		trap = get('https://waifu.pics/api/nsfw/trap').json()
+		ntrap = trap['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': ntrap
+		}
+
+@app.route('/api/wibu/cry2', methods=['GET','POST'])
+def crynime():
+	try:
+		cryz = get('https://waifu.pics/api/sfw/cry').json()
+		ncry = cryz['url']
+		id = f"anime_cry_{generateId(8)}.jpg"
+		downloadImg(ncry, id)
+		return send_file(id, mimetype='image/jpg')
+	except:
+		cryz = get('https://waifu.pics/api/sfw/cry').json()
+		ncry = cryz['url']
+		id = f"anime_cry{generateId(8)}.jpg"
+		downloadImg(ncry, id)
+		return send_file(id, mimetype='image/jpg')
+
+@app.route('/api/wibu/kiss2', methods=['GET','POST'])
+def kissnime():
+	try:
+		rkiss = get('https://waifu.pics/api/sfw/kiss').json()
+		nkiss = rkiss['url']
+		id = f"anime_kiss_{generateId(6)}.jpg"
+		downloadImg(nkiss, id)
+		return send_file(id, mimetype='image/jpg')
+	except:
+		rkiss = get('https://waifu.pics/api/sfw/kiss').json()
+		nkiss = rkiss['url']
+		id = f"anime_kiss_{generateId(6)}.jpg"
+		downloadImg(nkiss, id)
+		return send_file(id, mimetype='image/jpg')
+
+@app.route('/api/wibu/hug2', methods=['GET','POST'])
+def hugnime():
+	try:
+		hugz = get('https://waifu.pics/api/sfw/hug').json()
+		nhug = hugz['url']
+		id = f"anime_hug_{generateId(11)}.jpg"
+		downloadImg(nhug, id)
+		return send_file(id, mimetype='image/jpg')
+	except:
+		hugz = get('https://waifu.pics/api/sfw/hug').json()
+		nhug = hugz['url']
+		id = f"anime_hug_{generateId(11)}.jpg"
+		downloadImg(nhug, id)
+		return send_file(id, mimetype='image/jpg')
+
+@app.route('/api/wibu/randomanime2', methods=['GET','POST'])
+def randomanime():
+	try:
+		rnime = ['waifu','neko','shinobu','megumin']
+		nnimee = get('https://waifu.pics/api/sfw/%s' % random.choice(rnime)).json()
+		nimee = nnimee['url']
+		id = f"anime_random_{generateId(13)}.jpg"
+		downloadImg(nimee, id)
+		return send_file(id, mimetype='image/jpg')
+	except:
+		rnime = ['waifu','neko','shinobu','megumin']
+		nnimee = get('https://waifu.pics/api/sfw/%s' % random.choice(rnime)).json()
+		nimee = nnimee['url']
+		id = f"anime_random_{generateId(13)}.jpg"
+		downloadImg(nimee, id)
+		return send_file(id, mimetype='image/jpg')
+
+@app.route('/api/wibu/randomloli2', methods=['GET','POST'])
+def randomloli():
+	try:
+		hehe = ['kawaii','neko']
+		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
+		id = f"anime_random_{generateId(12)}.jpg"
+		downloadImg(loli, id)
+		return send_file(id, mimetype='image/jpg')
+	except:
+		return send_file(id, mimetype='image/jpg')
+
+@app.route('/api/wibu/memes2', methods=['GET','POST'])
+def rmemes():
+	try:
+		hehe = ['kawaii','neko']
+		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': loli
+		}
+	except:
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': loli
+		}
+
+@app.route('/api/wibu/blowjob2', methods=['GET','POST'])
+def blowjob():
+	try:
+		nblow = get('https://waifu.pics/api/nsfw/blowjob').json()
+		bblow = nblow['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': bblow
+		}
+	except:
+		nblow = get('https://waifu.pics/api/nsfw/blowjob').json()
+		bblow = nblow['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': bblow
+		}
+
+@app.route('/api/wibu/hentai2', methods=['GET','POST'])
+def hentaii():
+	try:
+		nblow = get('https://waifu.pics/api/nsfw/waifu').json()
+		bblow = nblow['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': bblow
+		}
+	except:
+		nblow = get('https://waifu.pics/api/nsfw/waifu').json()
+		bblow = nblow['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': bblow
+		}
+
+@app.route('/api/wibu/nekos2', methods=['GET','POST'])
+def nsfwneko():
+	try:
+		nneko = get('https://waifu.pics/api/nsfw/neko').json()
+		nekko = nneko['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': nekko
+		}
+	except:
+		nneko = get('https://waifu.pics/api/nsfw/neko').json()
+		nekko = nneko['url']
+		return {
+			'status': 200,
+			'creator':'Farhanss',
+			'result': nekko
+		}
+
+@app.route('/api/wibu/trap2', methods=['GET','POST'])
 def trapnime():
 	try:
 		trap = get('https://waifu.pics/api/nsfw/trap').json()
