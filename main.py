@@ -4,7 +4,6 @@ from lib.brainly import *
 from lib.manga import *
 from lib.resize import *
 from lib.search import *
-from lib.nulis import *
 from urllib.parse import *
 from urllib.request import *
 from textpro import tp
