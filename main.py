@@ -37,7 +37,7 @@ app.config['MEDIA'] = 'tts'
 app.secret_key = b'BB,^z\x90\x88?\xcf\xbb'
 
 def generateId(count):
-    result_str = ''.join(random.sample('abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', count))
+    result_str = ''.join((random.choice('abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for i in range(count)))
     return result_str
 
 @app.before_request
@@ -88,9 +88,10 @@ def tfs():
 @app.route('/api/nulis', methods=['GET','POST'])
 def nuls():
     for i in tulis(request.args.get('q'), worker=10):
-        id = def generateId(9)
+        id = f"nulis{generateId(9)}.jpg"
         i.show()
-        i.save(f"nulis-{id}")
+        i.save(id)
+        return send_file(id, mimetype=")
 
 # pro
 @app.route('/api/textpro', methods=['GET','POST'])
