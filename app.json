@@ -1,7 +1,19 @@
 {
-  "name": "Rest Sample",
-  "description": "Simple fitur flask",
+  "name": "kosong",
+  "description": "gada",
+  "logo": "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg",
+  "keywords": ["Farhan", "python"],
   "repository": "https://github.com/FarhanssAja/simple-api-flask/tree/DB-API-%5D",
-  "logo": "",
-  "keywords": ["api", "flask", "static"]
+  "stack": "container",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
