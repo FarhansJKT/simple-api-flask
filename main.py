@@ -41,6 +41,14 @@ def generateId(count):
     result_str = ''.join((random.choice('abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for i in range(count)))
     return result_str
 
+def ambil(urll, namefile):
+    response = urllib2.urlopen(urll)
+    data = response.read()
+    filename = namafile
+    file_ = open(filename, 'w')
+    file_.write(data)
+    file_.close()
+
 @app.before_request
 def before_request():
     g.user = None
