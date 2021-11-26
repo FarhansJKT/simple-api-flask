@@ -26,7 +26,12 @@ def tebakgambar():
 
 Nodejs Expressjs Example:
 ```javascript
-const expres = require('express');
-const app = express()
-const router = app.router
+const express = require('express');
+const router = express.Router();
+const fetch = require('node-fetch');
+
+router.get('/api/tebakgambar', (req, res) => {
+   fetch('https://docs-klapi.herokuapp.com/api/games/tebakgambar')
+   .then(res =>
+}
 ```
