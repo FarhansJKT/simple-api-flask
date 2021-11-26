@@ -1,0 +1,343 @@
+<!-- Hayo Ngapain?:v -->
+<!-- Credit Template By Farhan -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Documentation KLAPI</title>
+    <link rel="stylesheet" href="https://ziy.herokuapp.com/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://ziy.herokuapp.com/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="https://ziy.herokuapp.com/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://ziy.herokuapp.com/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://ziy.herokuapp.com/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://ziy.herokuapp.com/css/style.css">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Wk6KnE7aJHUHjpp_wBoDfkeSIOQfSGMmxg&usqp=CAU"><link rel="stylesheet" href="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Wk6KnE7aJHUHjpp_wBoDfkeSIOQfSGMmxg&usqp=CAU"><link rel="stylesheet" href="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <script src="https://ziy.herokuapp.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+   <meta name="description" content="Simple python flask api">
+   <meta property="og:image" content="https://i.ibb.co/kQGYdtR/1ff20d8df0d93a3164c0b5e71b59ae9e.jpg">
+   <meta property="og:site_name" content="KLAPI">
+   <meta name="keywords" content="KLAPI">
+   <meta name="author" content="Farhanss">
+  </head>
+  <body>
+  <body id="page-top" onload="getvisitor();">
+    <div class="container-scroller">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <a class="sidebar-brand brand-logo rounded-circle" href="#"><img src="images/logo1.png" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="#"><img src="images/logo1.png" class="rounded-circle" alt="logo" /></a>
+        </div>
+       <font face="Original Surfer">
+        <ul class="nav">
+          <li class="nav-item profile">
+            <div class="profile-desc">
+              <div class="profile-pic">
+                <div class="count-indicator">
+                  <img class="img-xs rounded-circle " src="https://i.ibb.co/kQGYdtR/1ff20d8df0d93a3164c0b5e71b59ae9e.jpg" alt="">
+                  <span class="count bg-success"></span>
+                </div>
+                <div class="profile-name">
+                  <h5 class="mb-0 font-weight-normal">{{g.user.username}}</h5>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-downloader" aria-expanded="false" aria-controls="ui-downloader">
+          <span class="menu-icon">
+          <i class="mdi mdi-download"></i>
+          </span>
+          <span class="menu-title">Downloader API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-downloader">
+          <ul class="nav flex-column sub-menu">
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downloader/yta?url=urlnya">YouTube Audio Downloader</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downloader/ytv?url=urlnya">YouTube Video Downloader</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downloader/facebook?url=urlnya">Facebook Downloader</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downlaoder/tiktok?wm=false&url=urlnya">Tiktok Nowm Downloader</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downlaoder/tiktok?wm=true&url=urlnya">Tiktok wm Downloader</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downlaoder/tiktok?url=urlnya">Tiktok audio Downloader</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downlaoder/ytsearch?search=bot%20wa">Youtube Search</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downlaoder/cocofun?wm=true&url=urlnya">Cocofun wm Downloader</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/downlaoder/cocofun?wm=false&url=urlnya">Cocofun Nowm Downloader</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-edu" aria-expanded="false" aria-controls="ui-downloader">
+          <span class="menu-icon">
+          <i class="mdi mdi-transcribe-close"></i>
+          </span>
+          <span class="menu-title">Edukasi API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-edu">
+          <ul class="nav flex-column sub-menu">
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/edukasi/wiki?search=termux">Wikipedia</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/edukasi/kbbi?kata=kursi">Kbbi</a></li>
+         <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/edukasi/translate/en?from=id&teks=saya farhanss">Translate</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-random" aria-expanded="false" aria-controls="ui-anime">
+          <span class="menu-icon">
+          <i class="mdi mdi-gamepad-variant"></i>
+          </span>
+          <span class="menu-title">Games Api</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-random">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/spam/spamcall?number=8173844843">SpamCall</a></li>
+          <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/games/tebakgambar">Tebak gambar</a></li>
+          <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/games/caklontong">Cak lontong</a></li>
+          <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/games/tebak-unsur-kimia">Tebak unsur kimia</a></li>
+          <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/games/tebakbendera">Tebak bendera</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-anime" aria-expanded="false" aria-controls="ui-random">
+          <span class="menu-icon">
+          <i class="mdi mdi-cat"></i>
+          </span>
+          <span class="menu-title">Wibu API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-anime">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/cry">Anime Cry</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/kiss">Anime Kiss</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/hug">Anime Hug</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/randomanime">Anime Random</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/randomloli">Anime Loly</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/memes">Anime Memes ( err )</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/blowjob">Anime blowjob</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/hentai">Anime Hentai</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/nekos">Anime Nekos</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/wibu/trap">Anime Trap</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-rdandom" aria-expanded="false" aria-controls="ui-anime">
+          <span class="menu-icon">
+          <i class="mdi mdi-comment-processing"></i>
+          </span>
+          <span class="menu-title">Other</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-rdandom">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="https://docs-klapi.herokuapp.com/api/spam/spamcall?number=8173844843">SpamCall</a></li>
+          <li class="nav-item"> <a class="nav-link"href="https://docs-klapi.herokuapp.com/api/nulis?q=Farhanss%20Ganss">Nulis1</a></li>
+          </ul>
+          </div>
+          </li>
+          <span class="nav-link">Contact Me</span>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://github.com/FarhanssAja">
+              <span class="menu-icon">
+                <i class="mdi mdi-github-circle"></i>
+              </span>
+              <span class="menu-title">Github</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://wa.me/621247374916">
+              <span class="menu-icon">
+                <i class="mdi mdi-whatsapp"></i>
+              </span>
+              <span class="menu-title">WhatsApp</span>
+            </a>
+          </li>
+        </ul>
+       </font>
+      </nav>
+      <div class="container-fluid page-body-wrapper">
+        <nav class="navbar p-0 fixed-top d-flex flex-row">
+          <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo-mini" href="index.html"><big><i class="mdi mdi-biohazard text-primary"></i></big></a>
+          </div>
+          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu"></span>
+            </button>
+            <ul class="navbar-nav w-100">
+              <li class="nav-item w-100">
+                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex ">
+                  <input type="text" class="form-control" placeholder="Fxc7 APIs">
+                </form>
+              </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item nav-settings d-none d-lg-block">
+                <a class="nav-link" href="#">
+                  <i class="mdi mdi-view-grid"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                  <i class="mdi mdi-bell"></i>
+                  <span class="count bg-danger"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                  <h6 class="p-3 mb-0">Info New Update</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-calendar text-success"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Login</p>
+                      <p class="text-muted ellipsis mb-0"> <a href="/login">Klick Hare</a></p>
+                    </div>
+                  </a>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Register</p>
+                      <p class="text-muted ellipsis mb-0"> <a href="/register">Klick Hare</a></p>
+                    </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                  <div class="navbar-profile">
+                    <img class="img-xs rounded-circle" src="https://i.ibb.co/kQGYdtR/1ff20d8df0d93a3164c0b5e71b59ae9e.jpg" alt="">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Farhanss</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+              <span class="mdi mdi-format-line-spacing"></span>
+            </button>
+          </div>
+        </nav>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-danger text-uppercase">{{g.user.username}}</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0" id="username">{{g.user.username}}</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success">
+                          <span class="mdi mdi-account icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal">{{g.user.info}}</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-danger text-uppercase">IP Address</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0" id="ip">Waiting...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success">
+                          <span class="mdi mdi-access-point-network icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal">Your IP Address</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-success text-uppercase">Visitor</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0" id="visits">Waiting...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-eye icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal">Visit Web</font>
+                  </div>
+                </div>
+              </div>
+<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gw-3+1f-3d+2z" data-ad-client="ca-pub-5404310597803049" data-ad-slot="6657550061"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+              <div class="card-body">
+              <img src="https://i.ibb.co/kQGYdtR/1ff20d8df0d93a3164c0b5e71b59ae9e.jpg" alt="Sayu" class="logo img-fluid rounded mx-auto d-block mb-4"/>
+              <h6 class="m-0 font-weight-bold text-primary">Information</h6>
+              <h6><br>
+              Simple Rest Api Flask python
+              <br> Jika menemukan bug biarin aja , chat gw bang gabutz <a href="https://wa.me/6281247374916?text=yahaha%20literhap"> Click Hare</a></font>
+              </div>
+              <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+              <h4 class="card-title">FITUR LAINYA</h4>
+              <div class="template-demo">
+              <button type="button" href="https://github.com/FarhanssAja/simple-api-flask/issues" id="RP" class="btn btn-dark btn-lg btn-block">REPORT ISSUES</button>
+              </div>
+              </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <div class="bg-dark btn btn-block btn-outline-danger">
+                <font face="Original Surfer" class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © <span id="Years">00</span> WhatsappCode</font>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      swal({
+        title: 'Welcome Suhu!',
+        text: 'Hi, Boy Jangan Rusak Website Kami',
+        imageUrl: 'https://i.ibb.co/kQGYdtR/1ff20d8df0d93a3164c0b5e71b59ae9e.jpg',
+        imageWidth: 200,
+        imageHeight: 200,
+        imageAlt: 'Danu',
+        animation: true
+      })
+    </script>
+    <script src="https://ziy.herokuapp.com/vendors/js/vendor.bundle.base.js"></script>
+    <script src="https://ziy.herokuapp.com/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <script src="https://ziy.herokuapp.com/js/off-canvas.js"></script>
+    <script src="https://ziy.herokuapp.com/js/hoverable-collapse.js"></script>
+    <script src="https://ziy.herokuapp.com/js/misc.js"></script>
+    <script src="https://ziy.herokuapp.com/js/settings.js"></script>
+    <script src="https://ziy.herokuapp.com/js/todolist.js"></script>
+    <script src="https://ziy.herokuapp.com/js/dashboard.js"></script>
+    <script src="https://ziy.herokuapp.com/js/ojan.js"></script>
+  </html>
