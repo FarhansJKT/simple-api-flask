@@ -91,6 +91,8 @@ def nuls():
         id = f"nulis{generateId(9)}.jpg"
         i.show()
         i.save(id)
+        image_binary = read_image(pid)
+        
         return send_file(id, mimetype=")
 
 # pro
