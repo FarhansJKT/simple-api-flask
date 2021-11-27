@@ -112,7 +112,8 @@ def loginp():
 			if request.args.get('redirect'):
                               nur = f"/{request.args.get('redirect')}"
                               return redirect(nur)
-                        else:return redirect('/docs')
+                        else:
+                              return redirect('/docs')
 
 	except IndexError:
 		return redirect('/register')
