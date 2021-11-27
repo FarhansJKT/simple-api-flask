@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Nulis online - Klapi</title>
+<style>
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #C7C7C7;
+  border-radius: 4px;
+  background-color: #FFFF;
+  resize: none;
+}
+button {
+	box-sizing: border-box;
+	border: 2px solid #C7C7C7;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+}
+body {
+	background-color: #FAFAFA;
+}
+</style>
+   </head>
+   <body>
+   	<table>
+   	<form action="/nulis" method="POST">
+           <hr>
+           <h4>Hallo {{ g.user.username }} , Write new book : </h4>
+           <textarea name="query" ></textarea>
+           <br>
+           <hr>
+           <button type="submit">write the book</button>
+           <button type="reset">reset teks</button>
+           <button href="/docs">back home</button>
+       </form>
+       </table>
+       <footer align="center">
+       	<br><br><img src="{{ g.images }}" alt="Result" /><br><hr>
+       	<h5>made with by ♥ Farhanss</h5>
+       </footer>
+    </body>
+
+</html>
