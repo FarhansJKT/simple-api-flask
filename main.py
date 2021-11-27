@@ -91,7 +91,7 @@ def write():
 
 @app.route('/login', methods=['GET'])
 def loging():
-	return render_template('signin.html')
+	return render_template('login.html')
 
 @app.route('/login', methods=['POST'])
 def loginp():
@@ -111,7 +111,7 @@ def loginp():
 
 @app.route('/register', methods=['GET'])
 def registerg():
-	return render_template('signup.html')
+	return render_template('register.html')
 
 @app.route('/register', methods=['POST'])
 def registerp():
