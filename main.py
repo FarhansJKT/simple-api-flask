@@ -110,7 +110,8 @@ def loginp():
 		if dat and dat.password == password:
 			session['user_id'] = dat.email
 			if request.args.get('redirect'):
-                              return redirect(f'/{request.args.get('redirect')}')
+                              nur = f"/{request.args.get('redirect')}"
+                              return redirect(nur)
                         else:return redirect('/docs')
 
 	except IndexError:
