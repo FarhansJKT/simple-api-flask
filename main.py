@@ -80,7 +80,7 @@ def api():
 def nulis():
         of not g.user:
                 return redirect('/login')
-        else:return render_template('signin.html')
+        else:return render_template('nulis.html')
 
 @app.route('/nulis_write', methods=['POST'])
 def write():
