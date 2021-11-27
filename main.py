@@ -109,9 +109,7 @@ def loginp():
 		dat = [x for x in users if x.email == email][0]
 		if dat and dat.password == password:
 			session['user_id'] = dat.email
-			if request.args.get('redirect'):
-                              nur = f"/{request.args.get('redirect')}"
-                              return redirect(nur)
+		
 	except IndexError:
 		return redirect('/register')
 
