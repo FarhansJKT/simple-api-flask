@@ -78,7 +78,7 @@ def api():
 
 @app.route('/nulis', methods=['GET'])
 def nulis():
-        of not g.user:
+        if not g.user:
                 return redirect('/login')
         else:return render_template('nulis.html')
 
