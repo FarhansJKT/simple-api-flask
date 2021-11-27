@@ -109,7 +109,7 @@ def loginp():
 		dat = [x for x in users if x.email == email][0]
 		if dat and dat.password == password:
 			session['user_id'] = dat.email
-			if request.args.get('redirect')
+			if request.args.get('redirect'):
                               return redirect(f'/{request.args.get('redirect')}')
                         else:return redirect('/docs')
 
