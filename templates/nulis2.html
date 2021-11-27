@@ -26,7 +26,7 @@ body {
    </head>
    <body>
    	<table>
-   	<form action="/nulis" method="POST">
+   	<form name="woe" action="/nulis" method="POST">
            <hr>
            <h4>Hallo {{ g.user.username }} , Write new book : </h4>
            <textarea name="query" ></textarea>
@@ -35,6 +35,7 @@ body {
            <button type="submit">write the book</button>
            <button type="reset">reset teks</button>
            <button href="/docs">back home</button>
+           <td><input type="button" OnClick="woe.query.value+='%0A'">Enter text</input></td>
        </form>
        </table>
        <footer align="center">
