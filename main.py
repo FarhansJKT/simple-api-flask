@@ -80,14 +80,18 @@ def api():
 def nulis():
         if not g.user:
                 return redirect('/login')
-        else:return render_template('nulis.html')
+        else:
+                g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=NoText"
+                return render_template('nulis2.html')
 
-@app.route('/nulis_write', methods=['POST'])
+@app.route('/nulis', methods=['POST'])
 def write():
         ff = request.form['query']
         if request.form['query'] == "":
-                return redirect('/nulis')
-        else:return redirect(f'https://docs-klapi.herokuapp.com/api/nulis?q={ff}')
+             g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=Text Kosong"
+        elif ff > 1:
+             g.images = f"https://docs-klapi.herokuapp.com/api/nulis?q={ff}"
+        else:g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=Text null"
 
 @app.route('/login', methods=['GET'])
 def loging():
