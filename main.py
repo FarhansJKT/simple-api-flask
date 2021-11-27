@@ -79,7 +79,7 @@ def api():
 @app.route('/nulis', methods=['GET'])
 def nulis():
         if not g.user:
-                return redirect('/login')
+                return redirect('/login?redirect=nulis')
         else:
                 g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=NoText"
                 return render_template('nulis2.html')
@@ -109,7 +109,9 @@ def loginp():
 		dat = [x for x in users if x.email == email][0]
 		if dat and dat.password == password:
 			session['user_id'] = dat.email
-			return redirect('/docs')
+			if request.args.get('redirect')
+                              return redirect(f'/{request.args.get('redirect')}')
+                        else:return redirect('/docs')
 
 	except IndexError:
 		return redirect('/register')
