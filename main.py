@@ -76,9 +76,22 @@ def api():
 		return redirect('/login')
 	else:return render_template('index.html')
 
+@app.route('/nulis', methods=['GET'])
+def nulis():
+        of not g.user:
+                return redirect('/login')
+        else:return render_template('signin.html')
+
+@app.route('/nulis_write', methods=['POST'])
+def write():
+        ff = request.form['query']
+        if request.form['query'] == "":
+                return redirect('/nulis')
+        else:return redirect('https://docs-klapi.herokuapp.com/api/nulis?q='ff)
+
 @app.route('/login', methods=['GET'])
 def loging():
-	return render_template('login.html')
+	return render_template('signin.html')
 
 @app.route('/login', methods=['POST'])
 def loginp():
@@ -98,7 +111,7 @@ def loginp():
 
 @app.route('/register', methods=['GET'])
 def registerg():
-	return render_template('register.html')
+	return render_template('signup.html')
 
 @app.route('/register', methods=['POST'])
 def registerp():
@@ -124,7 +137,7 @@ def registerp():
 
 @app.route('/', methods=['GET','POST'])
 def far():
-	return render_template('tod.html')
+	return render_template('dasboard.html')
 
 @app.errorhandler(404)
 def error(e):
