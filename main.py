@@ -89,8 +89,10 @@ def write():
         ff = request.form['query']
         if request.form['query'] == "":
              g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=Text Kosong"
+             return render_template('nulis2.html')
         else:
              g.images = f"https://docs-klapi.herokuapp.com/api/nulis?q={ff}"
+             return render_template('nulis2.html')
 
 @app.route('/login', methods=['GET'])
 def loging():
