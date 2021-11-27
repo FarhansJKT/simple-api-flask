@@ -87,7 +87,7 @@ def write():
         ff = request.form['query']
         if request.form['query'] == "":
                 return redirect('/nulis')
-        else:return redirect('https://docs-klapi.herokuapp.com/api/nulis?q='ff)
+        else:return redirect(f'https://docs-klapi.herokuapp.com/api/nulis?q={ff}')
 
 @app.route('/login', methods=['GET'])
 def loging():
