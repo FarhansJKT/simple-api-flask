@@ -78,11 +78,8 @@ def api():
 
 @app.route('/nulis', methods=['GET'])
 def nulis():
-        if not g.user:
-                return redirect('/login')
-        else:
-                g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=NoText"
-                return render_template('nulis2.html')
+        g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=NoText"
+        return render_template('nulis2.html')
 
 @app.route('/nulis', methods=['POST'])
 def write():
