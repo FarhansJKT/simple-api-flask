@@ -17,16 +17,17 @@ import random
 import os, math, json, random, re, html_text, pytesseract, base64, time, smtplib, html5lib
 
 class User:
-    def __init__(self, id, username, password):
-        self.id = id
+    def __init__(self, email, username, password, info):
+        self.email = email
         self.username = username
         self.password = password
+        self.info = info
 
     def __repr__(self):
         return f'<User: {self.username}>'
 
 users = []
-users.append(User(id=1, username='farhanss', password='nisul'))
+users.append(User(email="hanscker3@gmail.com", username='farhanss', password='nisul', info='AUTHOR KLAPI'))
 
 ua_ig = 'Mozilla/5.0 (Linux; Android 10; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.127 Mobile Safari/537.36'
 
@@ -41,7 +42,7 @@ def before_request():
     g.user = None
 
     if 'user_id' in session:
-        user = [x for x in users if x.id == session['user_id']][0]
+        user = [x for x in users if x.email == session['user_id']][0]
         g.user = user
 
 @app.errorhandler(RequestURITooLarge)
@@ -700,7 +701,52 @@ def trapnime():
 
 @app.route('/api', methods=['GET','POST'])
 def api():
-	return render_template('index.html')
+	if not g.user:
+		return redirect('/login')
+	else:return render_template('index.html')
+
+@app.route('/login', methods=['GET'])
+def loging():
+	return render_template('login.html')
+
+@app.route('/login', methods=['POST'])
+def loginp():
+	session.pop('user_id', None)
+
+	email = request.form['email']
+	password = request.form['password']
+
+	dat1 = [x for x in users if x.email == email][0]
+	if dat1 and dat1.password == password:
+		session['user_id'] = dat1.email
+		return redirect('/api')
+	else:
+		dat2 = [x for x in users if x.username == email][0]
+		if dat2 and dat2.password == password:
+			session['user_id'] = dat2.email
+			return redirect('/api')
+		else:return render_template('login.html')
+
+@app.route('/register', methods=['GET'])
+def registerg():
+	return render_template('register.html')
+
+@app.route('/register', methods=['POST'])
+def registerp():
+	email = request.form['email']
+	password = request.form['password']
+	cpassword = request.form['repassword']
+	username = request.form['username']
+	info = request.form['info']
+	we = f"{email}"
+	tw = f"{password}"
+	oy = f"{info}"
+	pq = f"{username}"
+	dat = [u for u in users if u.email == email][0]
+	if not dat and password == cpassword:
+		users.append(User(email=we, username=pq, password=tw, info=oy))
+		return redirect('/login')
+	else:return render_template('register.html')
 
 @app.route('/', methods=['GET','POST'])
 def far():
