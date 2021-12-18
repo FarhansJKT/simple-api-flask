@@ -32,7 +32,7 @@ class Dbehs:
         self.url = url
         self.email = email
 
-    def __repr__(self)
+    def __repr__(self):
         return f'<Data: {self.id}>'
 
 users = []
