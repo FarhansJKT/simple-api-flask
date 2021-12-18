@@ -149,7 +149,7 @@ def aw_p():
         email = request.form['email']
         url = request.form['url']
 
-        return redirect(createNew(email, url))
+        return f'Your Url : {createNew(email, url)}'
 
 @app.route('/login', methods=['GET'])
 def loging():
