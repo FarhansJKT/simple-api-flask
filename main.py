@@ -101,7 +101,7 @@ def TobzZ(e):
 def tp(text):
     return text.rstrip('\n').lstrip('\n')
 
-@app.route('/p/<path: ts>', methods=['GET'])
+@app.route('/p/<path:ts>', methods=['GET'])
 def pget(ts):
         try:
               woe = [x for x in dbeh if x.id == ts][0]
