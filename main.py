@@ -55,6 +55,22 @@ def validate(name):
 	except IndexEror:
 		return False
 
+def generateId(count):
+    result_str = ''.join((random.choice('abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for i in range(count)))
+    return result_str
+
+def createNew(emaild, urls):
+    smd = generateId(5)
+    try:
+         om = [u for u in dbeh if u.id == smd][0]
+         if om:
+             tod = smd + generateId(3)
+             dbeh.append(Dbehs(id=f"{tod}", url=f"{urls}, email=f"{emaild}"))
+             return f'https://kalong-api.herokuapp.com/p/{tod}'
+    except IndexError:
+         dbeh.append(Dbehs(id=f"{smd}", url=f"{urls}, email=f"{emaild}"))
+         return f'https://kalong-api.herokuapp.com/p/{smd}'
+
 @app.before_request
 def before_request():
     g.user = None
@@ -84,6 +100,22 @@ def TobzZ(e):
 
 def tp(text):
     return text.rstrip('\n').lstrip('\n')
+
+@app.route('/p/<path: ts>', methods=['GET'])
+def pget(ts):
+        try:
+              woe = [x for x in dbeh if x.id == ts][0]
+              if woe:
+                 session['cayang'] = woe.id
+                 return redirect('/getlink')
+        except IndexError:
+                 return redirect('/new')
+
+@app.route('getlink', methods=['GET', 'POST'])
+def getlinks():
+        if not g.dat:
+                return redirect('/new')
+        else:return render_template('getlink.html')
 
 @app.route('/docs', methods=['GET','POST'])
 def api():
@@ -117,7 +149,8 @@ def aw_p():
         email = request.form['email']
         url = request.from['url']
 
-        return redirect('/p
+        return redirect(createNew(email, url))
+
 @app.route('/login', methods=['GET'])
 def loging():
 	return render_template('login.html')
