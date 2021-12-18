@@ -131,6 +131,11 @@ def swjs():
         anu = open('public/sw.js', 'r').read()
         return f'{anu}'
 
+@app.route('/oke.js', methods=['GET','POST'])
+def swjs():
+        anu = open('public/oke.js', 'r').read()
+        return f'{anu}'
+
 @app.route('/nulis', methods=['GET'])
 def nulis():
         g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=NoText"
