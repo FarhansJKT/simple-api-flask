@@ -111,7 +111,7 @@ def pget(ts):
         except IndexError:
                  return redirect('/new')
 
-@app.route('getlink', methods=['GET', 'POST'])
+@app.route('/getlink', methods=['GET', 'POST'])
 def getlinks():
         if not g.dat:
                 return redirect('/new')
@@ -147,7 +147,7 @@ def aw_p():
         session.pop('cayang', None)
 
         email = request.form['email']
-        url = request.from['url']
+        url = request.form['url']
 
         return redirect(createNew(email, url))
 
