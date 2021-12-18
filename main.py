@@ -65,10 +65,10 @@ def createNew(emaild, urls):
          om = [u for u in dbeh if u.id == smd][0]
          if om:
              tod = smd + generateId(3)
-             dbeh.append(Dbehs(id=f"{tod}", url=f"{urls}, email=f"{emaild}"))
+             dbeh.append(Dbehs(id=tod, url=urls, email=emaild))
              return f'https://kalong-api.herokuapp.com/p/{tod}'
     except IndexError:
-         dbeh.append(Dbehs(id=f"{smd}", url=f"{urls}, email=f"{emaild}"))
+         dbeh.append(Dbehs(id=smd, url=urls, email=emaild))
          return f'https://kalong-api.herokuapp.com/p/{smd}'
 
 @app.before_request
