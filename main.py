@@ -604,7 +604,7 @@ def randomanime():
 def randomloli():
 	try:
 		hehe = ['kawaii','neko']
-		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
+		loli = get(f'https://api.lolis.life/{random.choice(hehe)}').json()['url']
 		return {
 			'status': 200,
 			'creator':'Farhanss',
@@ -621,7 +621,7 @@ def randomloli():
 def rmemes():
 	try:
 		hehe = ['kawaii','neko']
-		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
+		loli = get(f'https://api.lolis.life/{random.choice(hehe)}').json()['url']
 		return {
 			'status': 200,
 			'creator':'Farhanss',
