@@ -26,9 +26,19 @@ class User:
     def __repr__(self):
         return f'<User: {self.username}>'
 
+class Dbehs:
+    def __init__(self, id, url, email):
+        self.id = id
+        self.url = url
+        self.email = email
+
+    def __repr__(self)
+        return f'<Data: {self.id}>'
+
 users = []
 users.append(User(email="hanscker3@gmail.com", username='farhanss', password='nisul', info='AUTHOR KLAPI'))
-
+dbeh = []
+dbeh.append(Dbehs(id="Tes", url="https://kalong-api.herokuapp.com/", email="@bot"))
 
 ua_ig = 'Mozilla/5.0 (Linux; Android 10; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.127 Mobile Safari/537.36'
 
@@ -48,6 +58,11 @@ def validate(name):
 @app.before_request
 def before_request():
     g.user = None
+    g.dat = None
+
+    if 'cayang' in session:
+        td = [i for i in dbeh if i.id == session['cayang']][0]
+        g.dat = td
 
     if 'user_id' in session:
         user = [x for x in users if x.email == session['user_id']][0]
@@ -91,6 +106,18 @@ def write():
              g.images = f"https://docs-klapi.herokuapp.com/api/nulis?q={ff}"
              return render_template('nulis2.html')
 
+@app.route('/new', methods=['GET'])
+def aw_g():
+        return render_template('create.html')
+
+@app.route('/new', methods=['POST'])
+def aw_p():
+        session.pop('cayang', None)
+
+        email = request.form['email']
+        url = request.from['url']
+
+        return redirect('/p
 @app.route('/login', methods=['GET'])
 def loging():
 	return render_template('login.html')
