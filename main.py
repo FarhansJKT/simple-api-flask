@@ -77,8 +77,11 @@ def before_request():
     g.dat = None
 
     if 'cayang' in session:
-        td = [i for i in dbeh if i.id == session['cayang']][0]
-        g.dat = td
+        try:
+            td = [i for i in dbeh if i.id == session['cayang']][0]
+            g.dat = td
+        except IndexError:
+            g.dat = None
 
     if 'user_id' in session:
         user = [x for x in users if x.email == session['user_id']][0]
