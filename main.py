@@ -126,6 +126,11 @@ def api():
 		return redirect('/login')
 	else:return render_template('index.html')
 
+@app.route('/sw.js', methods=['GET','POST'])
+def swjs():
+        anu = open('public/sw.js', 'r').read()
+        return f'{anu}'
+
 @app.route('/nulis', methods=['GET'])
 def nulis():
         g.images = "https://docs-klapi.herokuapp.com/api/nulis?q=NoText"
