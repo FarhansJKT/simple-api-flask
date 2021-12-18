@@ -132,9 +132,9 @@ def swjs():
         return f'{anu}'
 
 @app.route('/oke.js', methods=['GET','POST'])
-def swjs():
-        anu = open('public/oke.js', 'r').read()
-        return f'{anu}'
+def okejs():
+        anus = open('public/oke.js', 'r').read()
+        return f'{anus}'
 
 @app.route('/nulis', methods=['GET'])
 def nulis():
