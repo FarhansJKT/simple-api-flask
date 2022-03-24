@@ -4,11 +4,11 @@ from lib.brainly import *
 from lib.manga import *
 from lib.resize import *
 from lib.search import *
-from lib.nulis import *
 from urllib.parse import *
 from urllib.request import *
 from textpro import tp
 from flask import *
+from nulis import tulis
 from werkzeug.exceptions import *
 #from werkzeug.utils import *
 from bs4 import BeautifulSoup as bs
@@ -35,6 +35,10 @@ apiKey = 'FhansGanss'
 apiKey_ocr = 'RiriCans'
 app.config['MEDIA'] = 'tts'
 app.secret_key = b'BB,^z\x90\x88?\xcf\xbb'
+
+def generateId(count):
+    result_str = ''.join((random.choice('abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for i in range(count)))
+    return result_str
 
 @app.before_request
 def before_request():
@@ -79,6 +83,14 @@ def tfs():
 	url = f"http://docs-jojo.herokuapp.com/api/tafsir?q={query}"
 	res = get(url).json()
 	return res
+
+#
+@app.route('/api/nulis', methods=['GET','POST'])
+def nuls():
+    for i in tulis(request.args.get('q'), worker=10):
+        id = f"nulis{generateId(9)}.jpg"
+        i.save(id)
+        return send_file(id, mimetype='image/jpg')
 
 # pro
 @app.route('/api/textpro', methods=['GET','POST'])
@@ -592,7 +604,7 @@ def randomanime():
 def randomloli():
 	try:
 		hehe = ['kawaii','neko']
-		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
+		loli = get(f'https://api.lolis.life/{random.choice(hehe)}').json()['url']
 		return {
 			'status': 200,
 			'creator':'Farhanss',
@@ -609,7 +621,7 @@ def randomloli():
 def rmemes():
 	try:
 		hehe = ['kawaii','neko']
-		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
+		loli = get(f'https://api.lolis.life/{random.choice(hehe)}').json()['url']
 		return {
 			'status': 200,
 			'creator':'Farhanss',
@@ -698,13 +710,13 @@ def trapnime():
 			'result': ntrap
 		}
 
-@app.route('/api', methods=['GET','POST'])
+@app.route('/docs', methods=['GET','POST'])
 def api():
-	return render_template('index.html')
+	return redirect('https://kalong-api.herokuapp.com/docs')
 
 @app.route('/', methods=['GET','POST'])
 def far():
-	return render_template('tod.html')
+	return redirect('https://kalong-api.herokuapp.com/')
 
 @app.errorhandler(404)
 def error(e):
